@@ -344,6 +344,6 @@ para la polybar se maneja en el directorio .config/polybar/
 
 se ejecuta el Launch.sh
 
-Para editar la configuracion de la polybar debes editar el archivo de configuracion `current.ini` que se encuentra en ese directorio
+Para editar la configuracion de la polybar debes editar el archivo de configuracion `current.ini` y `workspace.ini`que se encuentra en ese directorio
 
 Tambien puedes editar el `launch.sh` para decidir que barras lanzar.
