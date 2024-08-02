@@ -1,4 +1,4 @@
-c# Configuracion de escritorio de Z0SO
+# Configuracion de escritorio de Z0SO
 
 Aqui voy a estar documentando toda la parte de instalacion y configuracion de mi escritorio utilizando BSPWM y SXHKD porque ya me canse de hacer una y otra vez este proceso.
 
@@ -12,7 +12,7 @@ si estas en endeavour os o arch instala estos paquetes
 
 Estos son los escenciales
 ```sh
-sudo pacman -S bspwm rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
+sudo pacman -S bspwm sxhkd feh rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
 ```
 
 Para la polybar
@@ -23,7 +23,7 @@ sudo pacman -S polybar cmake pkg-config python-sphinx cairo libxcb xcb-util xcb-
 picom 
 
 ```sh
-		sudo pacman -S picom libxext libxcb xcb-util xcb-util-renderutil xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-render xcb-util-wm xcb-util-xrm pixman dbus libconfig glibc libx11 pcre2 evdev uthash libev
+sudo pacman -S picom libxext libxcb xcb-util xcb-util-renderutil xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-render xcb-util-wm xcb-util-xrm pixman dbus libconfig glibc libx11 pcre2 evdev uthash libev
 ```
 
 para instalar bspwm y sxhkd sigue los pasos en get started, el paso 4
