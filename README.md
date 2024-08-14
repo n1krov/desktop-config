@@ -77,11 +77,32 @@ para la polybar
 ln -s ${pwd}polybar ~/.config/
 ```
 
-y para neovim por si quieres
+
+### Configuracion de Neovim
+
+En el caso de que no tengas instalado neovim, puedes instalarlo con el siguiente comando.
 
 ```sh
 ln -s ${pwd}nvim ~/.config/
 ```
+
+
+##### 3. **Estructura del directorio**
+
+Esta es la estructura de carpetas tu `~/.config/nvim/` deberia verse asi
+
+```plaintext
+~/.config/nvim/
+├── init.lua
+└── lua/
+    ├── plugins/
+    │   └── init.lua
+    └── core/
+        ├── options.lua
+        ├── keymaps.lua
+        └── autocmds.lua
+```
+
 
 En el caso de que la instalacion de neovim te de error por falta de lazy.nvim solo ejecuta
 
