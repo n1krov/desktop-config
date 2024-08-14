@@ -21,7 +21,7 @@ bspc rule -a Screenkey manage=off
 picom &
 
 
-feh --bg-fill /home/zoso/Desktop/wallpapers/wp1.png &
+feh --bg-fill /home/zoso/Pictures/wp1.png &
 
 
 ~/.config/polybar/launch.sh &

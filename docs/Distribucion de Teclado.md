@@ -9,9 +9,9 @@
 **IMPORTANTE**
 **Configurar el teclado para la consola virtual**:
    Una vez instalado, intenta nuevamente establecer el keymap:
-   ```sh
-   sudo localectl set-keymap la-latin1
-   ```
+```sh
+sudo localectl set-keymap la-latin1
+```
 
 
 

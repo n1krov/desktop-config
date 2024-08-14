@@ -12,7 +12,7 @@ si estas en endeavour os o arch instala estos paquetes
 
 Estos son los escenciales
 ```sh
-sudo pacman -S bspwm rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
+sudo pacman -S bspwm sxhkd feh rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
 ```
 
 Para la polybar
