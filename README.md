@@ -82,3 +82,10 @@ y para neovim por si quieres
 ```sh
 ln -s ${pwd}nvim ~/.config/
 ```
+
+En el caso de que la instalacion de neovim te de error por falta de lazy.nvim solo ejecuta
+
+```sh
+git clone https://github.com/folke/lazy.nvim.git ~/.local/share/nvim/site/pack/packer/start/lazy.nvim
+```
+
