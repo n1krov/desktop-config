@@ -171,3 +171,14 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 10
 
+
+
+# abrir el scrot
+
+alt + s
+    /usr/bin/scrot
+
+
+# abrir Neovide
+alt + n
+	/usr/bin/neovide
