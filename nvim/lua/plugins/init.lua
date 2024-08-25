@@ -451,5 +451,5 @@ return {
             vim.g.closetag_close_shortcut = '<leader>>'
         end,
     },
-
+}
 	
