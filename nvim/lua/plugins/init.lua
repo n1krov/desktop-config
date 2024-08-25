@@ -1,6 +1,6 @@
 -- ~/.config/nvim/lua/plugins/init.lua
 
-<<<<<<< HEAD
+
 -- para importar alpha.lua desde .
 
 
