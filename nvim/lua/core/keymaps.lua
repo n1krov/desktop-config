@@ -151,6 +151,9 @@ vim.api.nvim_set_keymap('n', '<A-BS>', 'db', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ew', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 
+-- para cerrar el árbol de archivos
+vim.api.nvim_set_keymap('n', '<leader>ec', ':NvimTreeClose<CR>', { noremap = true, silent = true })
+
 ------------------------------------------------------------------------------------------
 -- Commentary: Comentar y descomentar código
 ------------------------------------------------------------------------------------------
