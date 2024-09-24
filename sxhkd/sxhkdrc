@@ -182,3 +182,8 @@ alt + s
 # abrir Neovide
 alt + n
 	/usr/bin/neovide
+
+
+# abrir thunar
+alt + t
+	/usr/bin/thunar
