@@ -55,33 +55,29 @@ cuando crees estos links simbolicos puedes modificar desde el repositorio donde 
 
 para el bspwm
 ```sh
-ln -s ${pwd}bspwm ~/.config/
+ln -s $(pwd)/bspwm ~/.config/
 ```
 
 para sxhkd
 ```sh
-ln -s ${pwd}sxhkd ~/.config/
+ln -s $(pwd)/xhkd ~/.config/
 ```
 
 para la kitty
 ```sh
-ln -s ${pwd}kitty ~/.config/
+ln -s $(pwd)/kitty ~/.config/
 ```
 
 para picom
 ```sh
-ln -s ${pwd}picom ~/.config/
+ln -s $(pwd)/picom ~/.config/
 ```
 
 para la polybar
 ```sh
-ln -s ${pwd}polybar ~/.config/
+ln -s $(pwd)/polybar ~/.config/
 
-
-
-```
 ---
-
 
 # Mi Terminal
 
@@ -91,7 +87,7 @@ Para la personalizacion de zsh con powerlevel10k debes instalar zsh y oh-my-zsh
 
 ### Paquetes necesarios
 ```sh
-sudo pacman -S zsh  openssh npm wget lsd bat
+sudo pacman -S zsh openssh npm wget lsd bat
 ```
 
 - Cosas con yay
@@ -103,14 +99,14 @@ En este repositorio hay un archivo .zshrc y un .p10k.zsh que debes enlazar al `~
 
 - En la raiz del repositorio ejecuta
 ```sh
-ln -s ${pwd}/.zshrc ~/.zshrc
-ln -s ${pwd}/.p10k.zsh ~/.p10k.zsh
+ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 ```
 o puedes poner la ruta absoluta de donde se encuentra el archivo
 
 ```sh
-ln -s /home/zoso/.config/bspwm/.zshrc ~/.zshrc
-ln -s /home/zoso/.config/bspwm/.p10k.zsh ~/.p10k.zsh
+ln -s /home/zoso/.config/.zshrc ~/.zshrc
+ln -s /home/zoso/.config/.p10k.zsh ~/.p10k.zsh
 ```
 
 > **Nota:** reemplaza zoso por tu nombre de usuario
@@ -118,16 +114,17 @@ ln -s /home/zoso/.config/bspwm/.p10k.zsh ~/.p10k.zsh
 ## Configuracion de la terminal
 
 Para la terminal ocupo kitty, es una terminal muy ligera y facil de configurar, en este repositorio hay un archivo de configuracion que debes enlazar a `~/.config/` para que se apliquen las configuraciones
+> **Nota:** si ya hay una carpeta kitty en `~/.config/` borrala para que se pueda crear el enlace simbolico
 
 - En la raiz del repositorio ejecuta
 ```sh
-ln -s ${pwd}/kitty ~/.config/kitty/
+ln -s $(pwd)/kitty ~/.config/kitty/
 ```
 
 o puedes poner la ruta absoluta de donde se encuentra el archivo
 
 ```sh
-ln -s /home/zoso/.config/bspwm/kitty ~/.config/kitty/
+ln -s /home/zoso/.config/kitty ~/.config/kitty/
 ```
 
 > **Nota:** reemplaza zoso por tu nombre de usuario
@@ -158,7 +155,6 @@ sudo ln -s -f /home/zoso/.p10k.zsh /root/.p10k.zsh
 ```sh
 cd
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 ```
 
 Luego se asigna zsh como shell por defecto para root
@@ -175,6 +171,12 @@ sudo chsh -s /bin/zsh
 
 Este plugin te permite con esc esc escribir sudo al inicio de la linea de comandos
 
+- Primero ponete como root y crea la carpeta `/usr/share/zsh-sudo`
+
+```sh
+sudo mkdir /usr/share/zsh-sudo
+```
+
 en `/usr/share/zsh-sudo` ejecuta
 
 ```sh
@@ -183,9 +185,8 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins
 
 #### Plugin fzf
 
-Este plugin te permite buscar comandos en el historial de comandos
-
-Ejecuta
+Este plugin te permite buscar comandos en el historial de comandos.
+Ejecuta estos comandos en la terminal:
 
 ```sh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -195,11 +196,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - Le das todo que si y listo
 
 ###### Como root
-
 ```sh   
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
-
+Luego cierras la terminal y vuelves a abrirla para que se apliquen los cambios.
 
 ---
