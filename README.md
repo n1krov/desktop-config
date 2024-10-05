@@ -1,121 +1,102 @@
-# Configuracion de escritorio de Z0SO
+# Configuración de Escritorio de Z0SO
 
-Aqui voy a estar documentando toda la parte de instalacion y configuracion de mi escritorio utilizando BSPWM y SXHKD porque ya me canse de hacer una y otra vez este proceso.
+Este documento detalla el proceso de instalación y configuración de mi escritorio utilizando **BSPWM** y **SXHKD**, para evitar repetir este proceso.
 
-ten en cuenta que la parte de la polybar esta ajustada para la resolucion 720, asi que vas a tener que armar una copia para 1080p
+## Consideraciones Generales
 
-- la polybar y bspwm por ahi con el tema de los espacios (margin y eso) no se cargan bien por loq ue hay que reiniciar bspwm entero
+- La configuración de **Polybar** está ajustada para una resolución de 720p. Si usas 1080p, deberás adaptar las configuraciones.
+- **BSPWM** y **Polybar** pueden no cargar bien los márgenes y espacios; es posible que tengas que reiniciar **BSPWM** para solucionar esto.
+- Para la **Polybar**, las configuraciones están distribuidas en varios archivos `.ini`. Puedes modificarlas según tu creatividad.
 
-para el tema de la polybar y tema de estilos colores y cofiguraciones. bspwm usa el launch.sh para arrancar las multiples barras, y las configuraciones estan dadas por todos los archivos .ini, asi que puedes perderte en las configuraciones, tu limite es tu propia creatividad.
+## Instalación de Paquetes
 
-si estas en endeavour os o arch instala estos paquetes
+Si usas **Endeavour OS** o **Arch**, estos son los paquetes esenciales:
 
-Estos son los escenciales
+### Paquetes Esenciales
 ```sh
 sudo pacman -S bspwm sxhkd feh rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
 ```
 
-Para la polybar
+### Polybar
 ```sh
 sudo pacman -S polybar cmake pkg-config python-sphinx cairo libxcb xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libpulse jsoncpp libmpdclient libuv libnl
 ```
 
-picom 
-
+### Picom
 ```sh
 sudo pacman -S picom libxext libxcb xcb-util xcb-util-renderutil xcb-util-cursor xcb-util-image xcb-util-keysyms xcb-util-render xcb-util-wm xcb-util-xrm pixman dbus libconfig glibc libx11 pcre2 evdev uthash libev
 ```
 
-para instalar bspwm y sxhkd sigue los pasos en get started, el paso 4
+Para instalar **BSPWM** y **SXHKD**, sigue las instrucciones de "Get Started", paso 4.
 
+## Fuentes: Hack Nerd Fonts
 
-### Fuentes Hack Nerd Fonts
+Las fuentes deben ubicarse en `/usr/share/fonts`. Si no tienes el directorio `fonts`, créalo. En mi caso, uso **Hack Nerd Fonts**, que puedes descargar desde la [página oficial](https://github.com/ryanoasis/nerd-fonts).
 
-Las fuentes que quieras descargar debes ponerlas en /usr/share/fonts
-
-> En mi caso ocupo hack nerd fonts asi que podes descargar desde la pagina
-
-donde lo descargues ejecutar como root
-
+Una vez descargada, mueve la fuente al directorio correspondiente y descomprímela:
 ```bash
 mv Hack.zip /usr/share/fonts/
+cd /usr/share/fonts/
+unzip Hack.zip
 ```
 
-Te mueves a ese directorio y lo descomprimes con `unzip`. Si no tienes el directorio fonts debes crearlo
+## Enlazando Configuraciones al Sistema
 
+Te recomiendo crear enlaces simbólicos para cada carpeta de este repositorio (excepto `docs/`, que contiene documentación adicional).
 
-### Enlazando las configuraciones al Sistema
+### Enlaces Simbólicos
 
-Te recomiendo que generes un link simbolico para cada carpeta de este repositorio menos docs/ ya que esa contiene documentacion adicional de cuando fui instalado cosas y resolucion de algunos conflictos
-
-cuando crees estos links simbolicos puedes modificar desde el repositorio donde clonaste ya que los cambios seran reflejados en ~/.config
-
-> **Nota:** si ya hay carpetas en .config con esos nombres solo borralos para que se puedan crear esos enlaces.
-
-
-para el bspwm
+Para **BSPWM**:
 ```sh
-ln -s ${pwd}bspwm ~/.config/
+ln -s $(pwd)/bspwm ~/.config/
 ```
 
-para sxhkd
+Para **SXHKD**:
 ```sh
-ln -s ${pwd}sxhkd ~/.config/
+ln -s $(pwd)/xhkd ~/.config/
 ```
 
-para la kitty
+Para **Kitty**:
 ```sh
-ln -s ${pwd}kitty ~/.config/
+ln -s $(pwd)/kitty ~/.config/
 ```
 
-para picom
+Para **Picom**:
 ```sh
-ln -s ${pwd}picom ~/.config/
+ln -s $(pwd)/picom ~/.config/
 ```
 
-para la polybar
+Para **Polybar**:
 ```sh
-ln -s ${pwd}polybar ~/.config/
-
-
-
+ln -s $(pwd)/polybar ~/.config/
 ```
+
+> **Nota:** Si ya tienes carpetas en `~/.config/` con esos nombres, bórralas para que se puedan crear los enlaces simbólicos correctamente.
+
 ---
-
 
 # Mi Terminal
 
-> Personalizacion de ZSH con PowerLevel10K
+## Personalización de ZSH con PowerLevel10K
 
-Para la personalizacion de zsh con powerlevel10k debes instalar zsh y oh-my-zsh
-
-### Paquetes necesarios
+### Paquetes Necesarios
 ```sh
-sudo pacman -S zsh  openssh npm wget lsd bat
+sudo pacman -S zsh openssh npm wget lsd bat
 ```
 
-- Cosas con yay
+### Paquetes Adicionales con Yay
 ```sh
 yay -S zsh-autosuggestions zsh-syntax-highlighting scrub
 ```
 
-En este repositorio hay un archivo .zshrc y un .p10k.zsh que debes enlazar al `~/` para que se apliquen las configuraciones. En este caso lo hacermos con enlaces simbolicos
-
-- En la raiz del repositorio ejecuta
-```sh
-ln -s ${pwd}/.zshrc ~/.zshrc
-ln -s ${pwd}/.p10k.zsh ~/.p10k.zsh
-```
-o puedes poner la ruta absoluta de donde se encuentra el archivo
+En este repositorio encontrarás los archivos `.zshrc` y `.p10k.zsh`. Debes enlazarlos a tu directorio home (`~/`) para aplicar las configuraciones:
 
 ```sh
-ln -s /home/zoso/.config/bspwm/.zshrc ~/.zshrc
-ln -s /home/zoso/.config/bspwm/.p10k.zsh ~/.p10k.zsh
+ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 ```
 
-> **Nota:** reemplaza zoso por tu nombre de usuario
-
-
+> **Nota:** Reemplaza `zoso` por tu nombre de usuario si utilizas rutas absolutas.
 Por ultimo para poner zsh como shell por defecto ejecuta
 
 ```sh
@@ -124,89 +105,60 @@ chsh -s /bin/zsh
 
 ## Configuracion de la terminal
 
-Para la terminal ocupo kitty, es una terminal muy ligera y facil de configurar, en este repositorio hay un archivo de configuracion que debes enlazar a `~/.config/` para que se apliquen las configuraciones
+Por defecto ocupoo **Kitty** que es una terminal ligera y fácil de configurar. En este repositorio encontrarás el archivo de configuración, que deberás enlazar a `~/.config/`:
 
-- En la raiz del repositorio ejecuta
-```sh
-ln -s ${pwd}/kitty ~/.config/kitty/
-```
-
-o puedes poner la ruta absoluta de donde se encuentra el archivo
 
 ```sh
-ln -s /home/zoso/.config/bspwm/kitty ~/.config/kitty/
+ln -s $(pwd)/kitty ~/.config/kitty/
 ```
 
-> **Nota:** reemplaza zoso por tu nombre de usuario
+> **Nota:** Si ya tienes una carpeta `kitty` en `~/.config/`, elimínala antes de crear el enlace simbólico.
 
-### Powerlevel10k
+## PowerLevel10k
 
-Solo clona el repositorio de github y sigue las instrucciones
-
+Clona el repositorio de **PowerLevel10k** y sigue las instrucciones:
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
 
-- Queda por cerrar y abrir la terminal para que se apliquen los cambios.
-
-
-#### Aplicar el tema para root
-
-Para aplicar el tema para root se puede enlazar el archivo de configuracion de zsh y el de powerlevel10k
-
-- Enlazas los archivos de configuracion
-
+Para aplicar el tema a **root**, enlaza los archivos de configuración y clona el repositorio:
 ```sh
 sudo ln -s -f /home/zoso/.zshrc /root/.zshrc
 sudo ln -s -f /home/zoso/.p10k.zsh /root/.p10k.zsh
-```
 
-- Luego te pones como root y clonas el repositorio de powerlevel10k
-```sh
-cd
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-```
-
-Luego se asigna zsh como shell por defecto para root
-
-```sh
+sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 sudo chsh -s /bin/zsh
 ```
 
-- Cierras la terminal y vuelves a abrirla para que se apliquen los cambios.
-
-## Plugins de ZSH
-
-#### SUDO Plugin
-
-Este plugin te permite con esc esc escribir sudo al inicio de la linea de comandos
-
-en `/usr/share/zsh-sudo` ejecuta
-
-```sh
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/sudo/sudo.plugin.zsh
-```
-
-#### Plugin fzf
-
-Este plugin te permite buscar comandos en el historial de comandos
-
-Ejecuta
-
-```sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
-
-- Le das todo que si y listo
-
-###### Como root
-
-```sh   
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
-
+> **Nota:** Recuerda cerrar y abrir la terminal para aplicar los cambios.
 
 ---
+
+# Plugins de ZSH
+
+## Sudo Plugin
+
+Este plugin te permite agregar `sudo` al inicio de una línea de comandos con `esc esc`. Para instalarlo:
+
+1. Crea la carpeta `/usr/share/zsh-sudo`:
+    ```sh
+    sudo mkdir /usr/share/zsh-sudo
+    ```
+2. Descarga el plugin:
+    ```sh
+    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -P /usr/share/zsh-sudo/
+    ```
+
+## Plugin fzf
+
+Este plugin te permite buscar en tu historial de comandos. Para instalarlo:
+
+1. Clona el repositorio:
+    ```sh
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    ```
+
+> **Nota:** Realiza lo mismo para **root** si lo necesitas.
+
+
