@@ -146,7 +146,7 @@ alias gp='git push'
 
 # Abrir el ultimaker cura
 
-alias cura='~/./Downloads/UltiMaker-Cura-5.8.0-linux-X64.AppImage'
+alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
 
 # activar entorno virtual
 
@@ -157,3 +157,8 @@ alias vac='source venv/bin/activate'
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+
+
+# abrir droidcam
+alias cum='sudo modprobe v4l2loopback && droidcam'

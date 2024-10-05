@@ -115,6 +115,13 @@ ln -s /home/zoso/.config/bspwm/.p10k.zsh ~/.p10k.zsh
 
 > **Nota:** reemplaza zoso por tu nombre de usuario
 
+
+Por ultimo para poner zsh como shell por defecto ejecuta
+
+```sh
+chsh -s /bin/zsh
+```
+
 ## Configuracion de la terminal
 
 Para la terminal ocupo kitty, es una terminal muy ligera y facil de configurar, en este repositorio hay un archivo de configuracion que debes enlazar a `~/.config/` para que se apliquen las configuraciones
