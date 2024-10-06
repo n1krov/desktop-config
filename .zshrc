@@ -162,3 +162,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # abrir droidcam
 alias cum='sudo modprobe v4l2loopback && droidcam'
+
+alias wp='~/.config/hypr/scripts/chwp.sh'
