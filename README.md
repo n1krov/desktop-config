@@ -97,10 +97,16 @@ ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 ```
 
 > **Nota:** Reemplaza `zoso` por tu nombre de usuario si utilizas rutas absolutas.
+Por ultimo para poner zsh como shell por defecto ejecuta
 
-## Configuración de Kitty
+```sh
+chsh -s /bin/zsh
+```
 
-**Kitty** es una terminal ligera y fácil de configurar. En este repositorio encontrarás el archivo de configuración, que deberás enlazar a `~/.config/`:
+## Configuracion de la terminal
+
+Por defecto ocupoo **Kitty** que es una terminal ligera y fácil de configurar. En este repositorio encontrarás el archivo de configuración, que deberás enlazar a `~/.config/`:
+
 
 ```sh
 ln -s $(pwd)/kitty ~/.config/kitty/
