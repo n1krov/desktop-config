@@ -1,6 +1,10 @@
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+export QT_QPA_PLATFORM=wayland
+export EGL_PLATFORM=wayland
+
+
 # Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -148,6 +152,12 @@ alias gp='git push'
 
 alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
 
+# cura con xwayland
+
+alias curax='QT_QPA_PLATFORM=xcb cura'
+
+
+
 # activar entorno virtual
 
 alias vac='source venv/bin/activate'
@@ -164,3 +174,10 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias cum='sudo modprobe v4l2loopback && droidcam'
 
 alias wp='~/.config/hypr/scripts/chwp.sh'
+
+
+
+# 7z
+
+alias zx='7z x'
+alias zl='7z l'
