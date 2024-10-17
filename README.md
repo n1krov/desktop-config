@@ -13,8 +13,8 @@ Este documento detalla el proceso de instalación y configuración de mi escrito
 Si usas **Endeavour OS** o **Arch**, estos son los paquetes esenciales:
 
 ### Paquetes Esenciales
-```sh
-sudo pacman -S bspwm sxhkd feh rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama
+```skkkkk
+sudo pacman -S bspwm sxhkd feh rofi base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm alsa-lib libxinerama flameshot
 ```
 
 ### Polybar
