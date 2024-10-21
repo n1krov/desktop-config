@@ -147,6 +147,8 @@ alias gaa='git add .'
 alias gac='git add . && git commit -m'
 alias gp='git push'
 
+alias gco='git checkout'
+alias gcob='git checkout -b'
 
 # Abrir el ultimaker cura
 
