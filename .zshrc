@@ -177,7 +177,19 @@ alias wp='~/.config/hypr/scripts/chwp.sh'
 
 
 
+
+
 # 7z
 
 alias zx='7z x'
 alias zl='7z l'
+
+
+# Network Manager
+alias nmwl='nmcli device wifi list'
+alias nmwc='nmcli device wifi connect'
+
+alias nmd='nmcli connection delete'
+
+
+alias ff='fastfetch'
