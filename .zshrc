@@ -1,62 +1,62 @@
-# Fix the Java Problem
-export _JAVA_AWT_WM_NONREPARENTING=1
 
+# ========================
+#   Wayland & Java Config
+# ========================
+export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=wayland
 export EGL_PLATFORM=wayland
 
-
-# Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
+# ========================
+#   Powerlevel10k Instant Prompt (Debe ir al inicio)
+# ========================
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set up the prompt
-
+# ========================
+#   Zsh Prompt Configuration
+# ========================
 autoload -Uz promptinit
 promptinit
 prompt adam1
 
+# Powerlevel10k Theme (al final del archivo también hay una referencia para evitar duplicados)
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# ========================
+#   History Config
+# ========================
 setopt histignorealldups sharehistory
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# Use modern completion system
-autoload -Uz compinit
-compinit
+# ========================
+#   Keybindings
+# ========================
+# Use emacs keybindings (aunque EDITOR esté en vi)
+bindkey -e
 
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
+# Para keybindings de vim o neovim
+# bindkey -v
 
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-source /home/zoso/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# ========================
+#   Plugins
+# ========================
+# Plugins para mejorar la experiencia Zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-sudo/sudo.plugin.zsh
 
-# Manual configuration
+# FZF plugin (si está instalado)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PATH=/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+# ========================
+#   Alias
+# ========================
 
-# Manual aliases
+# Atajos de ls con lsd
 alias ll='lsd -lh --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
@@ -64,19 +64,67 @@ alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias cat='bat'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Git Aliases
+alias gst='git status'
+alias gc='git commit -m'
+alias ga='git add'
+alias gaa='git add .'
+alias gac='git add . && git commit -m'
+alias gp='git push'
+alias gco='git checkout'
+alias gcob='git checkout -b'
 
-# Plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-sudo/sudo.plugin.zsh
+# Programas personalizados
+alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
+alias curax='QT_QPA_PLATFORM=xcb cura'
+alias minecraft-launcher='LC_ALL=C minecraft-launcher'
+alias nv='neovide'
+alias cum='sudo modprobe v4l2loopback && droidcam'
 
-# Functions
+# Archivos comprimidos
+alias zx='7z x'
+alias zl='7z l'
+
+# Network Manager
+alias nmwl='nmcli device wifi list'
+alias nmwc='nmcli device wifi connect'
+alias nmd='nmcli connection delete'
+
+# Otros alias útiles
+alias ff='fastfetch'
+alias wp='~/.config/hypr/scripts/chwp.sh'
+alias vac='source venv/bin/activate'
+
+#____________________
+# GITHUB CLIENT (gh)
+
+# Listar repositorios
+alias ghls='gh repo list'
+
+# Visualizar repositorio
+alias ghv='gh repo view'
+
+# Crear y eliminar repositorios
+alias ghcr='gh repo create'
+alias ghdr='gh repo delete'
+
+
+# Pull Request
+alias ghpr='gh pr list'
+alias ghprc='gh pr create'
+alias ghprd='gh pr delete'
+
+
+
+# ========================
+#   Funciones
+# ========================
+# Crear carpetas de nmap
 function mkt(){
 	mkdir {nmap,content,exploits,scripts}
 }
 
-# Extract nmap information
+# Extraer información de puertos de nmap
 function extractPorts(){
 	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
 	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
@@ -88,7 +136,7 @@ function extractPorts(){
 	cat extractPorts.tmp; rm extractPorts.tmp
 }
 
-# Set 'man' colors
+# Mejorar 'man' con colores
 function man() {
     env \
     LESS_TERMCAP_mb=$'\e[01;31m' \
@@ -100,98 +148,59 @@ function man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     man "$@"
 }
-# fzf improvement
-function fzf-lovely(){
 
+# Función avanzada para fzf
+function fzf-lovely(){
 	if [ "$1" = "h" ]; then
 		fzf -m --reverse --preview-window down:20 --preview '[[ $(file --mime {}) =~ binary ]] &&
- 	                echo {} is a binary file ||
-	                 (bat --style=numbers --color=always {} ||
-	                  highlight -O ansi -l {} ||
-	                  coderay {} ||
-	                  rougify {} ||
-	                  cat {}) 2> /dev/null | head -500'
-
+	                echo {} is a binary file ||
+	                (bat --style=numbers --color=always {} ||
+	                highlight -O ansi -l {} ||
+	                coderay {} ||
+	                rougify {} ||
+	                cat {}) 2> /dev/null | head -500'
 	else
 	        fzf -m --preview '[[ $(file --mime {}) =~ binary ]] &&
-	                         echo {} is a binary file ||
-	                         (bat --style=numbers --color=always {} ||
-	                          highlight -O ansi -l {} ||
-	                          coderay {} ||
-	                          rougify {} ||
-	                          cat {}) 2> /dev/null | head -500'
+	                        echo {} is a binary file ||
+	                        (bat --style=numbers --color=always {} ||
+	                        highlight -O ansi -l {} ||
+	                        coderay {} ||
+	                        rougify {} ||
+	                        cat {}) 2> /dev/null | head -500'
 	fi
 }
 
+# Eliminar archivos de forma segura
 function rmk(){
 	scrub -p dod $1
 	shred -zun 10 -v $1
 }
 
-# Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
+# Para ir a la carpeta de todos los repositoios
+function repos(){
+    echo -e "\n[*] Directorio Repos\n"
+    cd ~/Documents/repos/
+    lla
+}
+
+# para los repos de configuracion
+function dotfiles(){
+    echo -e "\n[*] Directorio Dotfiles\n"
+    cd ~/lautaro/repos/
+    lla
+}
+
+
+
+# ========================
+#   Powerlevel10k (Debe ir al final para finalizar instant prompt)
+# ========================
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-export PATH="$HOME/.cargo/bin:$PATH"
-
-alias minecraft-launcher='LC_ALL=C minecraft-launcher'
-
-alias nv='neovide .'
-
-
-# Git aliases
-alias gst='git status'
-alias gc='git commit -m'
-alias ga='git add'
-alias gaa='git add .'
-alias gac='git add . && git commit -m'
-alias gp='git push'
-
-alias gco='git checkout'
-alias gcob='git checkout -b'
-
-# Abrir el ultimaker cura
-
-alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
-
-# cura con xwayland
-
-alias curax='QT_QPA_PLATFORM=xcb cura'
+# ========================
+#   PATH Configurations
+# ========================
+export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
 
 
-
-# activar entorno virtual
-
-alias vac='source venv/bin/activate'
-
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-
-
-# abrir droidcam
-alias cum='sudo modprobe v4l2loopback && droidcam'
-
-alias wp='~/.config/hypr/scripts/chwp.sh'
-
-
-
-
-
-# 7z
-
-alias zx='7z x'
-alias zl='7z l'
-
-
-# Network Manager
-alias nmwl='nmcli device wifi list'
-alias nmwc='nmcli device wifi connect'
-
-alias nmd='nmcli connection delete'
-
-
-alias ff='fastfetch'
