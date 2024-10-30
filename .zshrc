@@ -1,4 +1,18 @@
 
+#---------------------------------------------------------
+#-Colores
+#---------------------------------------------------------
+readonly RED='\033[0;31m'
+readonly GREEN='\033[0;32m'
+readonly YELLOW='\033[0;33m'
+readonly BLUE='\033[0;34m'
+readonly PURPLE='\033[0;35m'
+readonly CYAN='\033[0;36m'
+readonly WHITE='\033[0;37m'
+readonly END='\033[0m'
+readonly BOLD='\033[1m'
+
+
 # ========================
 #   Wayland & Java Config
 # ========================
@@ -151,7 +165,8 @@ function man() {
 
 # Funcion para ir a mi directorio things
 function things(){
-    echo -e "\n[*] Directorio Things\n"
+    # echo -e "\n[*] Directorio Things\n"  con colores ahora
+    echo -e "${GREEN}[󰞷]${END}${BOLD} Directorio Things${END}\n"
     cd ~/Documents/repos/things
     lla
 }
@@ -185,15 +200,15 @@ function rmk(){
 }
 
 # Para ir a la carpeta de todos los repositoios
-function repos(){
-    echo -e "\n[*] Directorio Repos\n"
+function zoso(){
+    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio de Repositorios de Z0SO${END}\n"
     cd ~/Documents/repos/
     lla
 }
 
 # para los repos de configuracion
 function dotfiles(){
-    echo -e "\n[*] Directorio Dotfiles\n"
+    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio Dotfiles${END}\n"
     cd ~/lautaro/repos/
     lla
 }
