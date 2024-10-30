@@ -149,6 +149,14 @@ function man() {
     man "$@"
 }
 
+# Funcion para ir a mi directorio things
+function things(){
+    echo -e "\n[*] Directorio Things\n"
+    cd ~/Documents/repos/things
+    lla
+}
+
+
 # Función avanzada para fzf
 function fzf-lovely(){
 	if [ "$1" = "h" ]; then
