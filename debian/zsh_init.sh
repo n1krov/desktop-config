@@ -136,8 +136,11 @@ function deb_zsh(){
     sleep 1
 
     # Crear enlaces simbólicos para la configuración de ZSH
-    rm ~/.zshrc && ln -s $(pwd)/.zshrc ~/.zshrc
-    rm ~/.p10k.zsh && ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
+    rm ~/.zshrc
+    ln -s $(pwd)/.zshrc ~/.zshrc
+    
+    rm ~/.p10k.zsh
+    ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 
     # Cambiar la shell por defecto a ZSH
     echo -e "\n ${CYAN} ${END} ${GREEN} Cambiando la shell por defecto a ZSH...${END}"
