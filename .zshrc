@@ -207,7 +207,7 @@ function zoso(){
 }
 
 # para los repos de configuracion
-function dotfiles(){
+function dot(){
     echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio Dotfiles${END}\n"
     cd ~/lautaro/repos/
     lla

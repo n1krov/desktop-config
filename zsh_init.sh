@@ -132,8 +132,11 @@ function arch_zsh(){
     echo -e "\n ${CYAN} ${END} ${GREEN} Creando los enlaces simbólicos...${END}"
     sleep 1
 
-    rm ~/.zshrc && ln -s $(pwd)/.zshrc ~/.zshrc
-    rm ~/.p10k.zsh && ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
+    rm ~/.zshrc
+    ln -s $(pwd)/.zshrc ~/.zshrc
+    
+    rm ~/.p10k.zsh
+    ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 
     #--------------------------------------------
 
@@ -147,7 +150,8 @@ function arch_zsh(){
     echo -e "\n ${CYAN} ${END} ${GREEN} Configurando Kitty...${END}"
     sleep 1
 
-    rm -rf ~/.config/kitty && ln -s $(pwd)/kitty ~/.config/kitty/
+    rm -rf ~/.config/kitty
+    ln -s $(pwd)/kitty ~/.config/kitty/
 
 
     #--------------------------------------------
