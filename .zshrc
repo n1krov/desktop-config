@@ -128,6 +128,8 @@ alias ghpr='gh pr list'
 alias ghprc='gh pr create'
 alias ghprd='gh pr delete'
 
+# Copilot client
+alias cop='github-copilot-cli'
 
 
 # ========================
