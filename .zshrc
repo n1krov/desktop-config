@@ -215,6 +215,11 @@ function dot(){
     lla
 }
 
+function cursors(){
+    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio Cursores${END}\n"
+    ls -a /usr/share/icons/
+}
+
 
 
 # ========================
