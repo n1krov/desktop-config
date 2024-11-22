@@ -128,6 +128,8 @@ alias ghpr='gh pr list'
 alias ghprc='gh pr create'
 alias ghprd='gh pr delete'
 
+# Copilot client
+alias cop='github-copilot-cli'
 
 
 # ========================
@@ -231,5 +233,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # ========================
 export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
 
-export PATH=$PATH:/opt/mssql-tools/bin
+# export PATH=$PATH:/opt/mssql-tools/bin
 
