@@ -71,7 +71,7 @@ echo -e "${yellow}SSH configuracion...${nc}"
 # para que otros usuarios sce conecten por ssh deberian conocer la direccion ip del servidor
 echo -e "${yellow}Verificando la direccion IP del servidor...${nc}"
 
-ip=$(hostname -I | awk "{print $1}")
+ip=$(hostname -I | awk '{print $1}')
 
 echo -e "${green}La direccion IP del servidor es: ${nc}"
 
