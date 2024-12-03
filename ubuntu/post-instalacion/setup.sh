@@ -45,7 +45,7 @@ apt update -y
 apt upgrade -y
 
 echo -e "${green}Instalando paquetes necesarios...${nc}"
-apt install -y vim htop curl wget git zsh unzip zsh-syntax-highlighting zsh-autosuggestions build-essential openssh-server
+apt install -y vim htop curl wget git lsd neofetch zsh unzip zsh-syntax-highlighting zsh-autosuggestions build-essential openssh-server
 
 clear
 echo -e "${green}Configuracion del Acceso remoto mediante SSH...${nc}"
