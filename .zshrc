@@ -131,6 +131,8 @@ alias ghprd='gh pr delete'
 # Copilot client
 alias cop='github-copilot-cli'
 
+# Ping a google
+alias pingg='ping -c 5 google.com'
 
 # ========================
 #   Funciones
@@ -232,5 +234,4 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 #   PATH Configurations
 # ========================
 export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
-
 
