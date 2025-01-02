@@ -91,7 +91,7 @@ alias gcob='git checkout -b'
 # Programas personalizados
 alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
 alias curax='QT_QPA_PLATFORM=xcb cura'
-alias minecraft-launcher='LC_ALL=C minecraft-launcher'
+alias minecraft='LC_ALL=C minecraft-launcher'
 alias nv='neovide'
 alias cum='sudo modprobe v4l2loopback && droidcam'
 
