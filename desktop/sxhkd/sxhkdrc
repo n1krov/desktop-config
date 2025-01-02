@@ -173,10 +173,9 @@ XF86MonBrightnessDown
 
 
 
-# abrir el scrot
-
-alt + s
-    /usr/bin/scrot
+# # abrir el scrot
+# alt + s
+#     /usr/bin/scrot
 
 
 # abrir Neovide
@@ -187,3 +186,7 @@ alt + n
 # abrir thunar
 alt + t
 	/usr/bin/thunar
+
+# ejecutar flameshot
+alt + s
+    /usr/bin/spectacle -r

@@ -14,6 +14,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar log -c ~/.config/polybar/current.ini &
 polybar secondary -c ~/.config/polybar/current.ini &
 
+polybar eth_status -c ~/.config/polybar/current.ini &
+
 ## Right bar
 polybar top -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/current.ini &
