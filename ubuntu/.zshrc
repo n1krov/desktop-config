@@ -141,6 +141,15 @@ function mkt(){
 	mkdir {nmap,content,exploits,scripts}
 }
 
+function clean-docker()
+{
+    sudo docker rm $(sudo docker ps -a -q) --force 2> /dev/null
+    sudo docker rmi $(sudo docker images -q) --force 2> /dev/null
+    sudo docker network rm $(sudo docker network ls -q) --force 2> /dev/null
+    sudo docker volume rm $(sudo docker volume ls -q) --force 2> /dev/null
+}
+
+
 # Extraer información de puertos de nmap
 function extractPorts(){
 	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
