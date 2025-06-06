@@ -84,7 +84,9 @@ alias gc='git commit -m'
 alias ga='git add'
 alias gaa='git add .'
 alias gac='git add . && git commit -m'
-alias gp='git push'
+alias gp='git push origin'
+alias gpmaster='git push origin master'
+alias gpdev='git push origin dev'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 
@@ -94,6 +96,9 @@ alias curax='QT_QPA_PLATFORM=xcb cura'
 alias minecraft='LC_ALL=C minecraft-launcher'
 alias nv='neovide'
 alias cum='sudo modprobe v4l2loopback && droidcam'
+
+alias rain='flatpak run com.rafaelmardojai.Blanket'
+alias zen='flatpak run app.zen_browser.zen'
 
 # Archivos comprimidos
 alias zx='7z x'
