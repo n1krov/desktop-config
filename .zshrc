@@ -89,11 +89,14 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 
 # Programas personalizados
-alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
+alias cura='~/Downloads/cura.AppImage'
 alias curax='QT_QPA_PLATFORM=xcb cura'
-alias minecraft-launcher='LC_ALL=C minecraft-launcher'
+alias minecraft='LC_ALL=C minecraft-launcher'
 alias nv='neovide'
 alias cum='sudo modprobe v4l2loopback && droidcam'
+
+alias zen='flatpak run app.zen_browser.zen'
+
 
 # Archivos comprimidos
 alias zx='7z x'
@@ -204,8 +207,8 @@ function rmk(){
 }
 
 # Para ir a la carpeta de todos los repositoios
-function zoso(){
-    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio de Repositorios de Z0SO${END}\n"
+function repos(){
+    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio de Repositorios de n1krov${END}\n"
     cd ~/Documents/repos/
     lla
 }
@@ -222,6 +225,13 @@ function cursors(){
     ls -a /usr/share/icons/
 }
 
+# Para copiar en la clipboard la ipv4 de la interface w
+function ipz()
+{
+    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Copiando IP de wlp2s0 a la clipboard${END}\n"
+    ifconfig | grep wlp2s0 -A 1 | grep inet | awk '{print $2}' | wl-copy
+}
+
 
 
 # ========================
@@ -234,4 +244,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 #   PATH Configurations
 # ========================
 export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
+
 
