@@ -90,7 +90,8 @@ alias gcob='git checkout -b'
 
 
 # Programas personalizados
-alias cura='~/Downloads/UltiMaker-Cura-5.8.1-linux-X64.AppImage'
+# en ubuntu
+alias cura='~/Descargas/cura.AppImage'
 alias curax='QT_QPA_PLATFORM=xcb cura'
 alias minecraft-launcher='LC_ALL=C minecraft-launcher'
 alias nv='neovide'
@@ -140,6 +141,15 @@ alias cop='github-copilot-cli'
 function mkt(){
 	mkdir {nmap,content,exploits,scripts}
 }
+
+function clean-docker()
+{
+    sudo docker rm $(sudo docker ps -a -q) --force 2> /dev/null
+    sudo docker rmi $(sudo docker images -q) --force 2> /dev/null
+    sudo docker network rm $(sudo docker network ls -q) --force 2> /dev/null
+    sudo docker volume rm $(sudo docker volume ls -q) --force 2> /dev/null
+}
+
 
 # Extraer información de puertos de nmap
 function extractPorts(){

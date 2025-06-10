@@ -2,8 +2,13 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+export QT_QPA_PLATFORM=xcb  
+
+
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+# idioma del teclado
+setxkbmap latam
 
 # no hace falta cambiar el gap si estas en 1080, te recomiendo que lo dejes en 12
 bspc config window_gap         12
@@ -21,7 +26,10 @@ bspc rule -a Screenkey manage=off
 picom &
 
 
-feh --bg-fill /home/zoso/Desktop/wallpapers/wp1.png &
+# feh --bg-fill /home/zoso/Desktop/wallpapers/wp1.png &
+
+
+feh --bg-fill /home/zoso/Downloads/wallhaven-x6q9oz_1920x1080.png &
 
 
 ~/.config/polybar/launch.sh &
