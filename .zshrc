@@ -228,8 +228,14 @@ function cursors(){
 # Para copiar en la clipboard la ipv4 de la interface w
 function ipz()
 {
+    ip_var=$(ifconfig | grep wlp2s0 -A 1 | grep inet | awk '{print $2}')
     echo -e "\n${GREEN}[󰞷]${END}${BOLD} Copiando IP de wlp2s0 a la clipboard${END}\n"
-    ifconfig | grep wlp2s0 -A 1 | grep inet | awk '{print $2}' | wl-copy
+    echo -e "${GREEN}[󰞷]${END}${BOLD} IP: ${ip_var}${END}\n"
+    #con xclip
+    # echo $ipvar | xclip -sel clip
+
+    #con wl-copy
+    echo $ip_var | wl-copy
 }
 
 
