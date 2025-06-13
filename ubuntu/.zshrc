@@ -246,3 +246,5 @@ export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local
 
 # export PATH=$PATH:/opt/mssql-tools/bin
 
+# para solucionar tema del I/O por ssh
+export TERM=xterm-256color 
