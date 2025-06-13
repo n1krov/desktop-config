@@ -76,7 +76,10 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='bat'
+
+alias cat='batcat'
+# en algunos sistemas...
+# alias cat='bat'
 
 # Git Aliases
 alias gst='git status'
