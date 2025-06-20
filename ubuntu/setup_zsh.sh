@@ -23,7 +23,7 @@ ln -s $(pwd)/.p10k.zsh ~/.p10k.zsh
 
 echo -e "\n${CYAN}💻 Instalando plugin Sudo para ZSH...${END}"
 sudo mkdir -p /usr/share/zsh-sudo
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -P /usr/share/zsh-sudo/
+sudo wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -P /usr/share/zsh-sudo/
 
 echo -e "\n${CYAN}💻 Instalando FZF...${END}"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

@@ -76,7 +76,10 @@ alias la='lsd -a --group-dirs=first'
 alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='bat'
+
+alias cat='batcat'
+# en algunos sistemas...
+# alias cat='bat'
 
 # Git Aliases
 alias gst='git status'
@@ -245,4 +248,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 export PATH="$HOME/.cargo/bin:/root/.local/bin:/snap/bin:/usr/sandbox:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH"
 
 # export PATH=$PATH:/opt/mssql-tools/bin
-
+#
+# # ========================
+# para solucionar tema del I/O por ssh 
+export TERM=xterm-256color 
