@@ -70,11 +70,69 @@ Puedes escribir estos con `:` como en Vim:
 :cd ~/Descargas     # Cambiar de carpeta
 ```
 
+
+## 📂 Crear archivos y directorios
+
+Desde Ranger, entrá al **modo comando** con `:` (como en Vim), y usá estos comandos:
+
+| Acción              | Comando                    |
+| ------------------- | -------------------------- |
+| Crear archivo       | `:touch nombre.txt`        |
+| Crear carpeta       | `:mkdir nueva_carpeta`     |
+| Crear árbol de dirs | `:mkdir -p dir1/dir2/dir3` |
+
 ---
 
-### 🔥 Extra: Integraciones útiles
+## 🗑️ Borrar archivos o carpetas
 
-* **Vim + Ranger**: Desde Vim puedes lanzar Ranger con `:Ranger`.
-* **Previsualización de imágenes**: Si usás `ueberzug` o `kitty`, podés ver imágenes directamente.
-* **Plugins**: Hay extensiones para git, abrir archivos con fzf, etc.
+| Tecla     | Acción                                     |
+| --------- | ------------------------------------------ |
+| `dD`      | Borra archivo/directorio **(te pregunta)** |
+| `:delete` | Borra lo seleccionado                      |
+
+> ⚠️ No va a la papelera. Es eliminación directa, así que cuidado.
+
+---
+
+## 📄 Copiar y mover archivos
+
+Ranger usa un sistema tipo "clipboard" con `yy` y `dd`:
+
+| Acción             | Tecla |
+| ------------------ | ----- |
+| Copiar (yank)      | `yy`  |
+| Cortar (cut/mover) | `dd`  |
+| Pegar              | `pp`  |
+
+**Ejemplo de mover:**
+
+1. Navegá al archivo → `dd`
+2. Navegá al destino → `pp`
+
+**Ejemplo de copiar:**
+
+1. Navegá al archivo → `yy`
+2. Navegá al destino → `pp`
+
+---
+
+## 🏷️ Renombrar y mover (más controlado)
+
+| Acción               | Tecla / Comando                     |
+| -------------------- | ----------------------------------- |
+| Renombrar            | `a` o `cw`                          |
+| Mover usando comando | `:rename nuevo_nombre`              |
+| Mover a otra ruta    | `:rename ../otra_carpeta/nuevo.txt` |
+
+---
+
+## 🧠 Bonus: Renombrado masivo
+
+Muy útil si querés cambiar nombres en lote:
+
+```bash
+:bulkrename
+```
+
+Eso abre un editor con todos los nombres de los archivos seleccionados. Cambiás los nombres ahí, y al guardar, Ranger los renombra todos.
 

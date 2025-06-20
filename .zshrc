@@ -227,19 +227,30 @@ function cursors(){
     ls -a /usr/share/icons/
 }
 
-# Para copiar en la clipboard la ipv4 de la interface w
 function ipz()
 {
-    ip_var=$(ifconfig | grep wlp2s0 -A 1 | grep inet | awk '{print $2}')
-    echo -e "\n${GREEN}[󰞷]${END}${BOLD} Copiando IP de wlp2s0 a la clipboard${END}\n"
-    echo -e "${GREEN}[󰞷]${END}${BOLD} IP: ${ip_var}${END}\n"
+    ip_var=$(ifconfig | grep enp1s0 -A 1 | grep inet | awk '{print $2}')
+    # echo -e "\n${GREEN}[󰞷]${END}${BOLD} Copiando IP de wlp2s0 a la clipboard${END}\n"
+    # echo -e "${GREEN}[󰞷]${END}${BOLD} IP: ${ip_var}${END}\n"
     #con xclip
     # echo $ipvar | xclip -sel clip
-
+    #
     #con wl-copy
-    echo $ip_var | wl-copy
+    echo $ip_var
 }
 
+# Para copiar en la clipboard la ipv4 de la interface w
+function ipw()
+{
+    ip_var=$(ifconfig | grep wlp2s0 -A 1 | grep inet | awk '{print $2}')
+    # echo -e "\n${GREEN}[󰞷]${END}${BOLD} Copiando IP de wlp2s0 a la clipboard${END}\n"
+    # echo -e "${GREEN}[󰞷]${END}${BOLD} IP: ${ip_var}${END}\n"
+    #con xclip
+    # echo $ipvar | xclip -sel clip
+    #
+    #con wl-copy
+    echo $ip_var
+}
 
 
 # ========================
