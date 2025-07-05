@@ -114,6 +114,10 @@ alias ff='fastfetch'
 alias wp='~/.config/hypr/scripts/chwp.sh'
 alias vac='source venv/bin/activate'
 
+#_____________________
+# IP A
+alias ip='ip -c'
+
 #____________________
 # GITHUB CLIENT (gh)
 
