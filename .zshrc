@@ -173,12 +173,12 @@ function man() {
 }
 
 # Funcion para ir a mi directorio things
-function things(){
-    # echo -e "\n[*] Directorio Things\n"  con colores ahora
-    echo -e "${GREEN}[󰞷]${END}${BOLD} Directorio Things${END}\n"
-    cd ~/Documents/repos/things
-    lla
-}
+# function things(){
+#     # echo -e "\n[*] Directorio Things\n"  con colores ahora
+#     echo -e "${GREEN}[󰞷]${END}${BOLD} Directorio Things${END}\n"
+#     cd ~/Documents/repos/things
+#     lla
+# }
 
 
 # Función avanzada para fzf
@@ -211,7 +211,8 @@ function rmk(){
 # Para ir a la carpeta de todos los repositoios
 function repos(){
     echo -e "\n${GREEN}[󰞷]${END}${BOLD} Directorio de Repositorios de n1krov${END}\n"
-    cd ~/Documents/repos/
+    # cd ~/Documents/repos/
+    cd ~/Documentos/repos/
     lla
 }
 
