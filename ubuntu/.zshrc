@@ -98,7 +98,8 @@ alias cura='~/Descargas/cura.AppImage'
 alias curax='QT_QPA_PLATFORM=xcb cura'
 alias minecraft-launcher='LC_ALL=C minecraft-launcher'
 alias nv='neovide'
-alias cum='sudo modprobe v4l2loopback && droidcam'
+# alias cum='sudo modprobe v4l2loopback && droidcam'
+alias nvim='/usr/local/bin/nvim'
 
 # Archivos comprimidos
 alias zx='7z x'
