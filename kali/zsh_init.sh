@@ -1,6 +1,6 @@
 #!/bin/bash
 #--------------------------------------------
-#--- Script de inicializacion
+#--- Script de inicializacion para sistaema kali linux
 #--- Autor: Z0SO
 #-------------------------------------------
 
@@ -81,7 +81,7 @@ function deb_zsh(){
     echo -e "\n ${CYAN} ${END} ${GREEN} Instalando ZSH ${END}"
 
     # Instalación de paquetes esenciales usando apt
-    sudo apt update && sudo apt install -y zsh openssh npm wget lsd bat kitty
+    sudo apt update && sudo apt install -y lsd bat
 
     # Instalación de plugins de zsh y utilidades adicionales
     sudo apt install -y zsh-autosuggestions zsh-syntax-highlighting scrub
@@ -130,7 +130,7 @@ function deb_zsh(){
     echo -e "\n ${CYAN} ${END} ${GREEN} Sudo plugin ${END}"
     sleep 1
     sudo mkdir -p /usr/share/zsh-sudo
-    wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh -P /usr/share/zsh-sudo/
+    sudo cp /plugins/zsh-sudo/sudo.plugin.zsh /usr/share/zsh-sudo/
 
     # Plugin fzf
     echo -e "\n ${CYAN} ${END} ${GREEN} Plugin fzf ${END}"
@@ -143,7 +143,9 @@ function deb_zsh(){
     echo -e "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf"
     echo -e "~/.fzf/install --all"
 
-    ls
+    echo -e "\n"
+    ls -la
+    echo -e "\n"
 }
 
 #--------------------------------------------
