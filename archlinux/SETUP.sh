@@ -48,10 +48,10 @@ sudo pacman -Syu --noconfirm neovim
 echo -e "${GREEN}✅ Neovim instalado correctamente. Ejecuta 'nvim' para comprobar.${END}"
 
 # --- Instalación de Rust ---
-echo -e "\n${CYAN}💻 Instalando Rust...${END}"
-sudo pacman -Syu --noconfirm rustup
-rustup default stable
-echo -e "${GREEN}✅ Rust instalado correctamente.${END}"
+#echo -e "\n${CYAN}💻 Instalando Rust...${END}"
+#sudo pacman -Syu --noconfirm rustup
+#rustup default stable
+#echo -e "${GREEN}✅ Rust instalado correctamente.${END}"
 
 # --- Instalación de Batcat ---
 echo -e "\n${CYAN}💻 Instalando Batcat...${END}"
